@@ -27,3 +27,15 @@
 	    (setq count (+ count 1))
 	    (replace-match "" t t))
 	  (message "Cleaned %d lines" count)
+	  )
+	)
+    )
+  )
+
+(setq c-basic-offset 4)
+(setq tab-width 4)
+(setq indent-tabs-mode nil)
+
+(setq inhibit-splash-screen t)
+
+(setq visible-bell t)
