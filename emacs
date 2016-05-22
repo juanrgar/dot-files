@@ -39,3 +39,9 @@
 (setq inhibit-splash-screen t)
 
 (setq visible-bell t)
+
+;; taken from http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
