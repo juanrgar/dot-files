@@ -8,6 +8,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 
@@ -45,3 +46,5 @@ set smarttab
 
 set ls=2
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+
+map <C-n> :NERDTreeToggle<CR>
