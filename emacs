@@ -14,10 +14,6 @@
 
 (setq visible-bell t)
 
-(setq load-path (cons "/home/juanrgar/WindRiver/simics-6/simics-6.0.32/scripts" load-path))
-(autoload 'dml-mode "dml-mode" "DML mode" t)
-(add-to-list 'auto-mode-alist '("\\.dml\\'" . dml-mode))
-
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (require 'package)
