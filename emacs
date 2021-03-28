@@ -26,6 +26,12 @@
 (use-package fill-column-indicator
   :ensure t)
 
+(use-package gruvbox-theme
+  :ensure t)
+
+(use-package magit
+  :ensure t)
+
 (use-package projectile
   :ensure t
   :config
@@ -159,19 +165,6 @@
 ;; (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
 
+(load-theme 'gruvbox-dark-medium)
 
-(set-frame-font "Inconsolata 13" nil t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(monokai))
- '(custom-safe-themes
-   '("d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" default)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(set-frame-font "Fira Mono Medium 11" nil t)
