@@ -1,42 +1,26 @@
+
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rhysd/vim-clang-format'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'joshdick/onedark.vim'
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'tpope/vim-surround'
+
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'scrooloose/nerdcommenter'
+call plug#end()
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rhysd/vim-clang-format'
-" Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
-
-Plugin 'neoclide/coc.nvim'
-
-Plugin 'morhetz/gruvbox'
-Plugin 'nanotech/jellybeans.vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-
 filetype plugin indent on
 
 set encoding=utf-8
@@ -50,7 +34,7 @@ set wildmode=list:longest
 set ruler
 set number
 
-" set cursorline
+set cursorline
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 " hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 " nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
@@ -60,7 +44,9 @@ set hidden
 syntax enable
 
 set background=dark
-colorscheme gruvbox
+colorscheme onedark
+
+" set scrolloff=5
 
 set hlsearch    " highlight all search results
 set ignorecase  " do case insensitive search 
@@ -84,16 +70,32 @@ set showmatch
 set smarttab
 
 set ls=2
-set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+" set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline_theme = 'luna'
 
 map <C-K> :pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
+
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+nnoremap <silent> <F2> :call ToggleQuickFix()<cr>
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 
 " set scrolloff=10
 
