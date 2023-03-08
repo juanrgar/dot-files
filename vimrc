@@ -12,11 +12,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'sickill/vim-monokai'
+" Plug 'sickill/vim-monokai'
 Plug 'joshdick/onedark.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'altercation/vim-colors-solarized'
-Plug 'tpope/vim-vividchalk'
+Plug 'overcache/NeoSolarized'
+" Plug 'tpope/vim-vividchalk'
+" Plug 'tomasr/molokai'
+" Plug 'morhetz/gruvbox'
+" Plug 'ryanoasis/vim-devicons'
+" Plug 'altercation/vim-colors-solarized'
 
 Plug 'tpope/vim-surround'
 
@@ -24,6 +27,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'scrooloose/nerdcommenter'
+
+Plug 'https://github.com/itspriddle/vim-shellcheck'
+Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
 
 set nocompatible              " be iMproved, required
@@ -52,13 +58,14 @@ set hidden
 
 syntax enable
 
+" set termguicolors
 set background=dark
-colorscheme vividchalk
+colorscheme onedark
 
 " set scrolloff=5
 
 set hlsearch    " highlight all search results
-set ignorecase  " do case insensitive search 
+set ignorecase  " do case insensitive search
 set incsearch   " show incremental search results as you type
 set number      " display line number
 set noswapfile  " disable swap file
@@ -81,7 +88,7 @@ set smarttab
 set ls=2
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -269,4 +276,3 @@ nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <C-b> :Buffers<CR>
 nnoremap <silent> <C-f> :Rg<CR>
 nnoremap <Leader>pw :Rg <CR>=expand("<cword>")<CR><CR>
-
