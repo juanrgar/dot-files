@@ -1,11 +1,12 @@
 
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
@@ -15,7 +16,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'sickill/vim-monokai'
 Plug 'joshdick/onedark.vim'
 Plug 'overcache/NeoSolarized'
-" Plug 'tpope/vim-vividchalk'
+Plug 'tpope/vim-vividchalk'
 " Plug 'tomasr/molokai'
 " Plug 'morhetz/gruvbox'
 " Plug 'ryanoasis/vim-devicons'
@@ -60,7 +61,7 @@ syntax enable
 
 " set termguicolors
 set background=dark
-colorscheme onedark
+colorscheme vividchalk
 
 " set scrolloff=5
 
@@ -86,7 +87,9 @@ set showmatch
 set smarttab
 
 set ls=2
-set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+" set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline=%<[%n]\ %f\ %h%m%r%y%{FugitiveStatusline()}[%{coc#status()}][%{get(b:,'coc_current_function','')}]%=%-14.(%l,%c%V%)\ %P
 
 " let g:airline_powerline_fonts = 1
 
@@ -248,7 +251,7 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
@@ -269,6 +272,9 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " coc.nvi configuration END
+
+" let g:ctrlp_working_path_mode = 0
+" let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 
 " let $FZF_DEFAULT_OPTS='--reverse'
 nnoremap <silent> <C-p> :Files<CR>
