@@ -1,26 +1,26 @@
 
 call plug#begin('~/.vim/plugged')
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'rhysd/vim-clang-format'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Plug 'sickill/vim-monokai'
+Plug 'sickill/vim-monokai'
 Plug 'joshdick/onedark.vim'
 Plug 'overcache/NeoSolarized'
 Plug 'tpope/vim-vividchalk'
-" Plug 'tomasr/molokai'
-" Plug 'morhetz/gruvbox'
-" Plug 'ryanoasis/vim-devicons'
-" Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'nanotech/jellybeans.vim'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'tpope/vim-surround'
 
@@ -61,7 +61,7 @@ syntax enable
 
 " set termguicolors
 set background=dark
-colorscheme vividchalk
+colorscheme jellybeans
 
 " set scrolloff=5
 
@@ -77,6 +77,7 @@ set tabstop=8
 set shiftwidth=4
 set expandtab
 
+set textwidth=120
 set colorcolumn=120
 
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -89,7 +90,7 @@ set smarttab
 set ls=2
 " set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-set statusline=%<[%n]\ %f\ %h%m%r%y%{FugitiveStatusline()}[%{coc#status()}][%{get(b:,'coc_current_function','')}]%=%-14.(%l,%c%V%)\ %P
+" set statusline=%<[%n]\ %f\ %h%m%r%y%{FugitiveStatusline()}[%{coc#status()}][%{get(b:,'coc_current_function','')}]%=%-14.(%l,%c%V%)\ %P
 
 " let g:airline_powerline_fonts = 1
 
