@@ -1,7 +1,7 @@
 
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -90,7 +90,7 @@ set smarttab
 set ls=2
 " set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-" set statusline=%<[%n]\ %f\ %h%m%r%y%{FugitiveStatusline()}[%{coc#status()}][%{get(b:,'coc_current_function','')}]%=%-14.(%l,%c%V%)\ %P
+set statusline=%<[%n]\ %f\ %h%m%r%y%{FugitiveStatusline()}[%{coc#status()}][%{get(b:,'coc_current_function','')}]%=%-14.(%l,%c%V%)\ %P
 
 " let g:airline_powerline_fonts = 1
 
@@ -273,9 +273,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " coc.nvi configuration END
-
-" let g:ctrlp_working_path_mode = 0
-" let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 
 " let $FZF_DEFAULT_OPTS='--reverse'
 nnoremap <silent> <C-p> :Files<CR>
