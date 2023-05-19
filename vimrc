@@ -20,6 +20,7 @@ Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'nanotech/jellybeans.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'tpope/vim-surround'
@@ -61,7 +62,7 @@ syntax enable
 
 " set termguicolors
 set background=dark
-colorscheme jellybeans
+colorscheme onedark
 
 " set scrolloff=5
 
@@ -92,7 +93,7 @@ set ls=2
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set statusline=%<[%n]\ %f\ %h%m%r%y%{FugitiveStatusline()}[%{coc#status()}][%{get(b:,'coc_current_function','')}]%=%-14.(%l,%c%V%)\ %P
 
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
