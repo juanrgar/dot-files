@@ -273,5 +273,3 @@ nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <C-b> :Buffers<CR>
 nnoremap <silent> <C-f> :Rg<CR>
 nnoremap <Leader>pw :Rg <CR>=expand("<cword>")<CR><CR>
-
-source ~/.vimrc_asim
