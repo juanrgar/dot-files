@@ -1,31 +1,17 @@
 
 call plug#begin('~/.vim/plugged')
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-" Plug 'tpope/vim-flagship'
-
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'rhysd/vim-clang-format'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'nanotech/jellybeans.vim'
-Plug 'tpope/vim-vividchalk'
-Plug 'ryanoasis/vim-devicons'
-
-Plug 'tpope/vim-surround'
 
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
-Plug 'scrooloose/nerdcommenter'
-
-Plug 'https://github.com/itspriddle/vim-shellcheck'
-Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
 
 set nocompatible              " be iMproved, required
@@ -41,8 +27,6 @@ set wildmenu
 set wildmode=list:longest
 
 set ruler
-
-set mouse=a
 
 set cursorline
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
