@@ -8,7 +8,9 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'nanotech/jellybeans.vim'
+Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
+Plug 'vim-airline/vim-airline'
 
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -37,9 +39,9 @@ set hidden
 
 syntax enable
 
-" set termguicolors
+set termguicolors
 set background=dark
-colorscheme jellybeans
+colorscheme onedark
 
 " set scrolloff=5
 
@@ -65,17 +67,14 @@ set showmatch
 
 set smarttab
 
-set statusline=%<[%n]\ %f\ %h%m%r%y%{FugitiveStatusline()}[%{coc#status()}][%{get(b:,'coc_current_function','')}]%=%-14.(%l,%c%V%)\ %P
-set laststatus=2
+" set statusline=%<[%n]\ %f\ %h%m%r%y%{FugitiveStatusline()}[%{coc#status()}][%{get(b:,'coc_current_function','')}]%=%-14.(%l,%c%V%)\ %P
+" set laststatus=2
 set showtabline=2
 set guioptions-=e
 
-" let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#buffer_nr_show = 1
-
-map <C-K> :pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
-imap <C-K> <c-o>:pyf /usr/share/clang/clang-format-6.0/clang-format.py<cr>
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 function! ToggleQuickFix()
     if empty(filter(getwininfo(), 'v:val.quickfix'))
@@ -91,9 +90,6 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-
-
-" set scrolloff=10
 
 
 " coc.nvim configuration BEGIN
@@ -229,7 +225,7 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
